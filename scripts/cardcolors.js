@@ -55,9 +55,9 @@ function setCardColors(i) {
 }
 
 function setPokemonTypeTwo(i) {
-  if (displayedPokemon[i]['types']['1']) {
+  if (allPokemon[i]['types']['1']) {
     const typeName2 = checkType2(i);
-    document.getElementById(`type2-container${i}`).innerHTML = `<button id="type2-button${i}"><b>${displayedPokemon[i]['types']['1']['type']['name']}</b></button>`;
+    document.getElementById(`type2-container${i}`).innerHTML = `<button id="type2-button${i}"><b>${allPokemon[i]['types']['1']['type']['name']}</b></button>`;
     if (typeName2 === 'fire') {
       document.getElementById(`type2-button${i}`).style.backgroundColor = '#DB2929';
     } else if(typeName2 === 'grass') {
@@ -153,9 +153,9 @@ function setInfoCardColors(i) {
 }
 
 function setPokemonTypeTwoInfoCard(i) {
-  if (displayedPokemon[i]['types']['1']) {
+  if (allPokemon[i]['types']['1']) {
     const typeName2 = checkType2(i);
-    document.getElementById(`info-type2-container${i}`).innerHTML = `<button id="info-type2-button${i}"><b>${displayedPokemon[i]['types']['1']['type']['name']}</b></button>`;
+    document.getElementById(`info-type2-container${i}`).innerHTML = `<button id="info-type2-button${i}"><b>${allPokemon[i]['types']['1']['type']['name']}</b></button>`;
     if (typeName2 === 'fire') {
       document.getElementById(`info-type2-button${i}`).style.backgroundColor = '#DB2929';
     } else if(typeName2 === 'grass') {
@@ -195,9 +195,9 @@ function setPokemonTypeTwoInfoCard(i) {
 }
 
 function checkType1(i) {
-  return displayedPokemon[i]['types']['0']['type']['name'];
+  return allPokemon[i]['types']['0']['type']['name'];
 }
 
 function checkType2(i) {
-  return displayedPokemon[i]['types']['1']['type']['name'];
+  return allPokemon[i]['types']['1']['type']['name'];
 }

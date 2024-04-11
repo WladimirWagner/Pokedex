@@ -8,30 +8,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
-  <script src="templates.js"></script>
-  <script src="cardcolors.js"></script>
-  <script src="chart.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="infocard.css">
-  <link rel="stylesheet" href="scrollbar.css">
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/templates.js"></script>
+  <script src="./scripts/cardcolors.js"></script>
+  <script src="./scripts/chart.js"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/infocard.css">
+  <link rel="stylesheet" href="./styles/scrollbar.css">
   <link rel="icon" type="image/x-icon" href="./icon/pokeball.png">
 </head>
 
 <body onload="init()">
-  <div class="container">
+  <div class="container" id="container">
     <img class="pokeball" src="./icon/pokeball.png">
     <nav>
-      <img src="./icon/spiel.png" alt="">
-      <h1>POKEDEX</h1> <input type="search" name="" id="search" onchange="searchPokemon()">
+      <div class="logo-container">
+        <img src="./icon/spiel.png" alt="">
+        <h1>pokedex</h1> 
+      </div>
+      <input type="search" name="" id="search" onchange="searchPokemon()">
     </nav>
 
     <div id="pokedex">
       
     </div>
 
-    <div class="more-pokemon-button-container">
-      <button class="more-pokemon-button" onclick="loadMorePokemon()">More Pokemon</button>
+    <div id="more-pokemon-button" class="more-pokemon-button-container">
+      <button class="more-pokemon-button" onclick="loadMorePokemon()">more pokemon</button>
     </div>
   </div>
   <div id="info-container" class="d-none">
