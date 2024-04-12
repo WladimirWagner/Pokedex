@@ -19,12 +19,12 @@ async function loadAllPokemon() {
 }
 
 function renderPokedex() {
+  showLoadingSpinner();
   let pokedex = document.getElementById('pokedex');
   pokedex.innerHTML = '';
 
   for (let i = 0; i < firstShownPokemon; i++) {
     pokedex.innerHTML += pokemonCardTemplate(i);
-    
     setCardColors(i);
     setPokemonTypeTwo(i);
   }
@@ -42,7 +42,6 @@ function openInfoCard(i) {
   background.classList.add('blurred');
   infoCard.innerHTML = infoCardTemplate(i);
   renderChart(i);
-
   setInfoCardColors(i);
   setPokemonTypeTwoInfoCard(i);
 }
@@ -77,13 +76,11 @@ function searchPokemon() {
   let pokedex = document.getElementById('pokedex');
   pokedex.innerHTML = '';
 
-
-  if (searchValue.length >= 3) {
+  if (searchValue.length >= 1) {
     for (let i = 0; i < allPokemon.length; i++) {
       let pokemon = allPokemon[i];
-      if (pokemon['name'].includes(searchValue)) {
+      if (pokemon['name'].includes(searchValue) || pokemon['id'].toString() === searchValue) {
         pokedex.innerHTML += pokemonCardTemplate(i);
-    
         setCardColors(i);
         setPokemonTypeTwo(i);
       }

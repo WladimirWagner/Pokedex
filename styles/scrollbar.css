@@ -5,7 +5,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #FAF5CD;
+  background: #FFF2E1;
 }
  
 /* Handle */
@@ -15,5 +15,6 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+  cursor: pointer; 
 }
