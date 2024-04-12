@@ -19,7 +19,6 @@ async function loadAllPokemon() {
 }
 
 function renderPokedex() {
-  showLoadingSpinner();
   let pokedex = document.getElementById('pokedex');
   pokedex.innerHTML = '';
 
