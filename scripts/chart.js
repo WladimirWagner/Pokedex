@@ -33,6 +33,9 @@ function renderChart(i) {
                 size: 9
               }
             },
+            angleLines: {
+              color: 'grey'
+            },
             pointLabels: {
               color: 'black',
               font: {

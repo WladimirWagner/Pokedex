@@ -5,7 +5,6 @@ let currentPokemon;
 
 async function init() {
   await loadAllPokemon();
-  renderPokedex();
 }
 
 async function loadAllPokemon() {
@@ -16,6 +15,7 @@ async function loadAllPokemon() {
 
     allPokemon.push(currentPokemon);
   }
+  renderPokedex();
 }
 
 function renderPokedex() {
