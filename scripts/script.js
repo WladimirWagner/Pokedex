@@ -13,7 +13,7 @@ async function loadAllPokemon() {
     let response = await fetch(pokemonUrl);
     currentPokemon = await response.json();
 
-    allPokemon.push(currentPokemon);
+    allPokemon.push(currentPokemon); 
   }
   renderPokedex();
 }
