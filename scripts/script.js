@@ -4,25 +4,36 @@ let numberOfAllPokemon = 1024;
 let currentPokemon;
 
 async function init() {
-  await loadAllPokemon();
+  showLoader();
+  await loadFirstTwentyPokemon();
+  hideLoader();
+  loadAllPokemon();
 }
 
-async function loadAllPokemon() {
-  for (let i = 1; i < numberOfAllPokemon; i++) {
+async function loadFirstTwentyPokemon() {
+  for (let i = 1; i <= firstShownPokemon; i++) {
     let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${i}`;
     let response = await fetch(pokemonUrl);
     currentPokemon = await response.json();
-
-    allPokemon.push(currentPokemon); 
+    allPokemon.push(currentPokemon);
   }
   renderPokedex();
+}
+
+async function loadAllPokemon() {
+  for (let i = firstShownPokemon + 1; i <= numberOfAllPokemon; i++) {
+    let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    let response = await fetch(pokemonUrl);
+    currentPokemon = await response.json();
+    allPokemon.push(currentPokemon);
+  }
 }
 
 function renderPokedex() {
   let pokedex = document.getElementById('pokedex');
   pokedex.innerHTML = '';
 
-  for (let i = 0; i < firstShownPokemon; i++) {
+  for (let i = 0; i < firstShownPokemon && i < allPokemon.length; i++) {
     pokedex.innerHTML += pokemonCardTemplate(i);
     setCardColors(i);
     setPokemonTypeTwo(i);
@@ -88,4 +99,12 @@ function searchPokemon() {
     renderPokedex();
     document.getElementById('more-pokemon-button').classList.remove('d-none');
   }
+}
+
+function showLoader() {
+  document.getElementById('loader').style.display = 'block';
+}
+
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
 }

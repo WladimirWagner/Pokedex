@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Syne", sans-serif;
+
 }
 
 body {
@@ -43,6 +44,8 @@ nav img {
 
 h1 {
   font-size: 36px;
+  font-weight: 800;
+
 }
 
 nav input {
@@ -96,7 +99,7 @@ nav input {
 }
 
 #id {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 4px;
   margin-top: 32px;
 }
@@ -148,6 +151,24 @@ nav input {
 
 .d-none {
   display: none;
+}
+
+#loader {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader img {
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
 
 @media(max-width: 977px) {

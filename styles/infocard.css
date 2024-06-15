@@ -28,6 +28,10 @@
   flex-direction: column;
 }
 
+.data span {
+  font-size: 20px;
+}
+
 .info-image-container {
   display: flex;
   justify-content: center;
@@ -131,7 +135,10 @@ canvas {
   .close-button img {
     height: 20px;
   }
-  
+    
+  .data span {
+    font-size: 16px;
+  }
   
   .info-type-container button {
     font-size: 12px;
@@ -140,6 +147,10 @@ canvas {
     margin: 4px;
     border: none;
     border-radius: 4px;
+  }
+
+  .info-type-container span {
+    font-size: 14px;
   }
   
   .chart {
