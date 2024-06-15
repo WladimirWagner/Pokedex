@@ -155,6 +155,9 @@ nav input {
 
 #loader {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   left: 50%;
   top: 50%;

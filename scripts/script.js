@@ -102,9 +102,15 @@ function searchPokemon() {
 }
 
 function showLoader() {
-  document.getElementById('loader').style.display = 'block';
+  document.getElementById('nav').style.display = 'none';
+  document.getElementById('more-pokemon-button').style.display = 'none';
+  document.getElementById('pokedex').style.display = 'none';
+  document.getElementById('loader').style.display = 'flex';
 }
 
 function hideLoader() {
   document.getElementById('loader').style.display = 'none';
+  document.getElementById('pokedex').style.display = 'flex';
+  document.getElementById('nav').style.display = 'flex';
+  document.getElementById('more-pokemon-button').style.display = 'flex';
 }
